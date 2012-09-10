@@ -1,0 +1,11 @@
+[
+	{
+		"name": "sun-encoder-library"
+	},
+	{
+		"name": "sun-wsdl-ext-library"
+	},
+	{
+		"name": "sun-wsdl-library"
+	}
+]

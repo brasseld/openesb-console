@@ -5,12 +5,14 @@ window.Router = Backbone.Router.extend({
         ":instance/assemblies":         "assemblies",
         ":instance/assembly/:assembly": "assembly",
         ":instance/components":         "components",
+        ":instance/libraries":         "libraries",
         ":instance/instance":           "instance",
         "instances":                    "instances"
     },
 
     initialize: function () {
         this.listAssemblies = new AssemblyCollection();
+        this.listSharedLibraries = new SharedLibraryCollection();
         this.listComponents = new ComponentCollection();
     //    this.headerView = new HeaderView();
     //    $('.header').html(this.headerView.render().el);
@@ -47,6 +49,12 @@ window.Router = Backbone.Router.extend({
         this.listAssemblies.fetch();
     },
 
+    libraries: function (instance) {
+        console.log('List shared libraries using server id : ' + instance);
+        this.sharedLibrariesView = new SharedLibrariesView({collection: this.listSharedLibraries});
+        this.listSharedLibraries.fetch();
+    },
+
     components: function (instance) {
         console.log('List components using server id : ' + instance);
         this.componentsView = new ComponentsView({collection: this.listComponents});
@@ -65,7 +73,7 @@ window.Router = Backbone.Router.extend({
 
 });
 
-templateLoader.load(["AssembliesView", "InstancesView", "InstanceItemView", "ComponentsView", "AssemblyItemView", "ComponentItemView", "InstanceView"],
+templateLoader.load(["AssembliesView", "InstancesView", "InstanceItemView", "ComponentsView", "AssemblyItemView", "ComponentItemView", "InstanceView", "SharedLibrariesView", "SharedLibraryItemView"],
     function () {
         app = new Router();
         Backbone.history.start();
