@@ -1,0 +1,57 @@
+
+<div id="content-header">
+	<h1>Service Assemblies</h1>
+	<div class="btn-group">
+		<a href="#modal-deploy-sa" class="btn btn-large tip-bottom" title="Deploy..." role="button" data-toggle="modal" data-backdrop="static"><i class="icon-file"></i></a>
+	</div>
+</div>
+
+<div id="breadcrumb">
+	<a href="#1/instance" title="Go to Instance" class="tip-bottom"><i class="icon-globe"></i> dfrlmasweba04</a>
+	<a href="#" class="current">Service Assemblies</a>
+</div>
+
+<div class="container-fluid">
+	<div class="widget-box">
+		<div class="widget-title">
+			<span class="icon">
+				<input type="checkbox" id="title-checkbox" name="title-checkbox" />
+			</span>
+			<h5>Service Assemblies JBI</h5>
+			<div class="buttons">
+				<a class="btn btn-mini tip-bottom" href="#" title="Delete selected SA">Delete</a>
+				<a class="btn btn-mini tip-bottom" href="#" title="Enable selected SA">Enable</a>
+				<a class="btn btn-mini tip-bottom" href="#" title="Disable selected SA">Disable</a>
+			</div>
+		</div>
+		<div class="widget-content nopadding">
+			<table class="table table-bordered table-striped with-check" id="assemblies-table">
+				<thead>
+					<tr>
+						<th><i class="icon-resize-vertical"></i></th>
+						<th>Name</th>
+						<th>State</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>							
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal hide fade" id="modal-deploy-sa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Deploying Service Assembly JBI</h3>
+  </div>
+  <div class="modal-body">
+    <p>Download local file to remote server</p>
+    <p>Select target</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    <button class="btn btn-primary">Deploy it !</button>
+  </div>
+</div>

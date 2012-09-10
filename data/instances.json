@@ -1,0 +1,50 @@
+[
+	{
+		"id": 1,
+		"name": "LM - Env. Dev", 
+		"host": "dfrlmasweba04", 
+		"port": "38686",
+		"access": "JMX",
+		"state": "success"
+	},
+	{
+		"id": 2,
+		"name": "LM - Env. Rec", 
+		"host": "rfrlmasweba04", 
+		"port": "38686",
+		"access": "JMX",
+		"state": "important"
+	},
+	{
+		"id": 3,
+		"name": "LM - Env. Rec", 
+		"host": "rfrlmasweba04", 
+		"port": "38686",
+		"access": "JMX",
+		"state": "success"
+	},
+	{
+		"id": 4,
+		"name": "LM - Env. Rec", 
+		"host": "rfrlmasweba04", 
+		"port": "38686",
+		"access": "JMX",
+		"state": "warning"
+	},
+	{
+		"id": 5,
+		"name": "LM - Env. Rec", 
+		"host": "rfrlmasweba04", 
+		"port": "38686",
+		"access": "JMX",
+		"state": "success"
+	},
+	{
+		"id": 6,
+		"name": "LM - Env. Rec", 
+		"host": "rfrlmasweba04", 
+		"port": "38686",
+		"access": "JMX",
+		"state": "success"
+	}
+]

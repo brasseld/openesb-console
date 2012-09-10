@@ -1,0 +1,8 @@
+[
+	{ "name": "sun-database-binding", "status": "Activé sur toutes les cibles", "type": "Liaison" },
+        { "name": "sun-email-binding", "status": "Activé sur toutes les cibles", "type": "Liaison" },
+        { "name": "sun-bpel-engine", "status": "Activé sur toutes les cibles", "type": "Moteur" },
+        { "name": "sun-javaee-engine", "status": "Activé sur toutes les cibles", "type": "Moteur" },
+        { "name": "sun-http-binding", "status": "Activé sur toutes les cibles", "type": "Liaison" },
+        { "name": "sun-jms-binding", "status": "Activé sur toutes les cibles", "type": "Liaison" }
+]
