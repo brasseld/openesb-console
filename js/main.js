@@ -1,13 +1,18 @@
 window.Router = Backbone.Router.extend({
 
     routes: {
-        "":                             "dashboard",
-        ":instance/assemblies":         "assemblies",
-        ":instance/assembly/:assembly": "assembly",
-        ":instance/components":         "components",
-        ":instance/libraries":         "libraries",
-        ":instance/instance":           "instance",
-        "instances":                    "instances"
+        "":                                         "dashboard",
+        ":instance/assemblies":                     "assemblies",
+        ":instance/assembly/:assembly":             "assembly",
+        ":instance/assembly/:assembly/general":     "assemblyGeneral",
+        ":instance/assembly/:assembly/description": "assemblyDescription",
+        ":instance/assembly/:assembly/target":      "assemblyTarget",
+        ":instance/assembly/:assembly/stats":       "assemblyStats",
+        ":instance/assembly/:assembly/monitoring":  "assemblyMonitoring",
+        ":instance/components":                     "components",
+        ":instance/libraries":                      "libraries",
+        ":instance/instance":                       "instance",
+        "instances":                                "instances"
     },
 
     initialize: function () {
@@ -69,11 +74,19 @@ window.Router = Backbone.Router.extend({
 
     assembly: function (instance, assembly) {
         console.log('View assembly ' + assembly + ' from instance ' + instance);
+        this.assemblyView = new AssemblyView();
+        $('#content').html(this.assemblyView.render().el);
+    },
+
+    assemblyGeneral: function (instance, assembly) {
+        console.log('View assembly general tab ' + assembly + ' from instance ' + instance);
+        this.assemblyGeneralTabView = new AssemblyGeneralTabView();
+        $('#tabContent').html(this.assemblyGeneralTabView.render().el);
     }
 
 });
 
-templateLoader.load(["AssembliesView", "InstancesView", "InstanceItemView", "ComponentsView", "AssemblyItemView", "ComponentItemView", "InstanceView", "SharedLibrariesView", "SharedLibraryItemView"],
+templateLoader.load(["AssembliesView", "InstancesView", "InstanceItemView", "ComponentsView", "AssemblyItemView", "ComponentItemView", "InstanceView", "SharedLibrariesView", "SharedLibraryItemView", "AssemblyView", "AssemblyGeneralTabView"],
     function () {
         app = new Router();
         Backbone.history.start();

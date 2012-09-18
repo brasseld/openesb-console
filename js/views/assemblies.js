@@ -32,19 +32,40 @@ window.AssemblyItemView = Backbone.View.extend({
     render:function () {
         $(this.el).html(this.template(this.model.toJSON()));
         return this;
+    }
+});
+
+window.AssemblyView = Backbone.View.extend({
+
+    initialize:function () {
+        console.log('Initializing Assembly View');
     },
 
-    findByServer:function (server) {
-        var url = (key == '') ? '../api/employees' : "../api/employees/search/" + key;
-        console.log('findByName: ' + key);
-        var self = this;
-        $.ajax({
-            url:url,
-            dataType:"json",
-            success:function (data) {
-                console.log("search success: " + data.length);
-                self.reset(data);
-            }
-        });
-    }
+    events: {
+        'click a.tab'    : 'toggleTab'
+    },
+
+    toggleTab: function (event) {
+        $('ul.nav-tabs li.active').removeClass('active');
+        $(event.target).closest("li").addClass('active');
+
+        location.href = event.target.href;
+    },
+
+    render:function () {
+        $(this.el).html(this.template());
+        return this;
+    },
+});
+
+window.AssemblyGeneralTabView = Backbone.View.extend({
+
+    initialize:function () {
+        console.log('Initializing Service Assembly General Tab View');
+    },
+
+    render:function () {
+        $(this.el).html(this.template());
+        return this;
+    },
 });
